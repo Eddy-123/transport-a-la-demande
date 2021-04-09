@@ -5,12 +5,50 @@
 
 \begin{document}
 
-\title{Sur les méthodes de résolution du Problème de transport à la demande: étude bibliographique}
+\title{Sur les méthodes de résolution du Problème de transport à la demande}
 \author{Adegnandjou Eddy, Walid Yahia Mahammed}
-\date{13 Mars 2021}
+\date{\today}
 \maketitle
 
 \newpage
+
+\section{Optimisation combinatoire}
+
+\paragraph{}
+L'optimisation combinatoire est une branche de la programmation mathématique née pour répondre aux besoins de plusieurs domaines dont l'informatique. L'optimisation combinatoire s'intéresse à des problèmes pour lesquelles il y a souvent un très grand nombre de solutions, qu'il n'est pas possible de d'explorer de façon explicite pour déterminer un meilleur choix.
+
+\section{Problème du voyageur de commerce}
+
+\section{Problème de tournée de véhicule}
+
+\section{Programme linéaire}
+
+\section{Programmation/optimisation linéaire en nombres entiers}
+
+\section{Algorithmique et complexité}
+
+\paragraph{}
+La complexité permet de mieux caractériser les difficultés rencontrées par les méthodes de résolution pour déterminer une solution à un problème d'optimisation combinatoire.
+
+\section{Méthode exacte}
+
+\section{Heuristique}
+
+\paragraph{}
+Les méthodes heuristiques ne garantissent pas l'optimalité de la solution, mais permettent d'obtenir un résultat de bonne qualité au bout d'un temps raisonnable.
+
+\section{Mat-heuristique}
+
+\section{Caractérisation de l'offre}
+
+\section{Caractérisation de la demande}
+
+\section{Problème de dégénérescence}
+
+\section{Solution optimale du primal/dual}
+
+\section{Relaxation linéaire}
+La relaxation d'un problème consiste à l'étudier dans un espace plus étendu dont on dispose de suffisamment d'outils théoriques pour mieux l'appréhender. Cette manœuvre est utile en particulier pour la résolution du problème principal de la méthode de génération de colonne présentée dans le second chapitre. La résolution de la relaxation d'un problème peut être utile à sa propre résolution. Ceci a été démontré par Karmarkar \cite{Karmarkar} en se basant sur un problème de programmation quadratique.
 
 \section{Introduction}
 
@@ -53,6 +91,9 @@ Les méthodes de résolution exactes permettent de mener une étude suffisamment
 \section{Positionnement du TAD par rapport aux autres travaux}
 
 \paragraph{}
+Le TAD fait parti de la famille des problèmes de tournées de véhicule (VRP), dont le plus populaire est celui du voyageur de commerce TSP. Plusieurs travaux sur le TSP ont conduit à l'élaboration de méthodes de résolution en optimisation combinatoire et en recherche opérationnelle(\cite{Nobody06}). Pour résoudre les problème de cette catégorie, les graphes sont un excellent outil de modélisation. En théorie des graphes, le TAD se rapproche du problème de recherche d'un circuit hamiltonien.
+
+\paragraph{}
 Le problème du transport est tout d'abord un problème d'optimisation combinatoire. Il appartient à la catégorie des problèmes d’optimisation combinatoire NP-Difficile, NP-complet et peut être mono-objectif ou multi-objectif. Il intéresse de ce fait la communauté de la recherche opérationnelle d'une part. D'autre part, les sociologues s'interrogent sur les raisons qui motivent un important flux de transport ainsi que l'impact de ce fait sur la société. Les géographes quant-à eux s'intéressent à l'interaction entre les territoires et les réseaux.
 
 
@@ -60,8 +101,12 @@ Le problème du transport est tout d'abord un problème d'optimisation combinato
 
 Le problème de transport à la demande est un problème d'actualité dont la résolution peut bénéficier des récentes avancées scientifiques d'autres domaines tels que l'intelligence artificielle. Considérant que l'étude bibliographique est un processus évolutif nécessitant une veille bibliographique, les résultats présentés dans ce rapport constituent une base de travail qui sera progressivement enrichie tout au long de la rédaction du mémoire. Ils permettront de poursuivre la synthèse bibliographique en explorant le réseau de citations, les références des publications pertinentes sur les méthodes de résolution du transport à la demande.
 
+\section{Méthode de génération des colonnes}
+La méthode de génération des colonnes se base sur l'idée que toutes les variables ne sont pas forcément utiles pour trouver la solution optimale, elle peut être utilisée sous forme de méthode exacte ou en tant qu'heuristique. C'est une méthode itérative où une colonne correspond à une variable. Le problème initial est donc traité sous forme de problème maître alors qu'un problème esclave se charge de générer les nouvelles variables à considérer dans chaque itération en considérant les contraintes de faisabilité. Cette méthode utilise la solution duale et les coûts réduits. Puisqu'on a besoin des variables duales, la génération de colonnes ne fonctionne que sur les problèmes en nombre réel. La méthode de simplexe tout comme l'algorithme du point intérieur peut être utilisée à ce niveau pour résoudre le problème maître car il permet d'obtenir une solution optimale du primal et du dual. Cette opération se déroule avant de s'intéresser au problème esclave, au sein d'une même itération. [Schéma récapitulatif] Même si elle est très efficace en pratique, la méthode de simplexe peut dans le pire des cas conduire à une complexité exponentielle \cite{Simplex}.
 
-\section{Bibliographie}
+
+\bibliographystyle{plain}
+\bibliography{my}
 
 \paragraph{}
 Thierry Garaix.Étude et résolution exacte de problèmes de transport à la demande avec qualité de service. Modélisation et simulation. Université d’Avignon, 2007. Français. tel-00534894

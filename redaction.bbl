@@ -1,0 +1,19 @@
+\begin{thebibliography}{1}
+
+\bibitem{Nobody06}
+Thierry Garaix.
+\newblock Étude et résolution exacte de problèmes de transport à la demande
+  avec qualité de service, 2007.
+
+\bibitem{Karmarkar}
+N.~Karmarkar.
+\newblock An interior-point approach to np-complete problems, proceedings of
+  the 1st integer programming and combinatorial optimization conference, 1990,
+  351-366.
+
+\bibitem{Simplex}
+V.~Klee and G.J. Minty.
+\newblock How good is the simplex algorithm ? in o. shisha, editor,
+  inequalities, iii, academic press, new york, ny, (1972), 159–175.
+
+\end{thebibliography}
