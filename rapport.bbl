@@ -1,0 +1,62 @@
+\begin{thebibliography}{10}
+
+\bibitem{10-113}
+Stone~JR Baugh~JW, Kakivaya~GKR.
+\newblock Baugh jw, kakivaya gkr, stone jr. intractability of the dial-a-ride
+  problem and a multiobjective solution using simulated annealing. engineering
+  optimization. 1998;30:91–123.
+
+\bibitem{10-123}
+Savelsbergh~M Campbell~AM.
+\newblock Efficient insertion heuristics for vehicle routing and scheduling
+  problems. transportation science. 2004;38(3):369–378.
+
+\bibitem{10-77}
+Laporte~G Cordeau~JF.
+\newblock A tabu search heuristic for the static multi-vehicle dial-a-ride
+  problem. transportation research part b. 2003;37:579-594.
+
+\bibitem{Nobody06}
+Thierry Garaix.
+\newblock Étude et résolution exacte de problèmes de transport à la demande
+  avec qualité de service, 2007.
+
+\bibitem{Parafais}
+Psaraftis HN.
+\newblock Dynamic vehicle routing : Status and prospects. annals of operations
+  research. 1995;61(1):143-164.
+
+\bibitem{12-dreo}
+É. D. Taillard P.~Siarry J.~Dréo, A.~Petrowski.
+\newblock Métaheuristiques pour l’optimisation difficile. eyrolles
+  (editions), november 2003. isbn 2212113684.
+
+\bibitem{Karmarkar}
+N.~Karmarkar.
+\newblock An interior-point approach to np-complete problems, proceedings of
+  the 1st integer programming and combinatorial optimization conference, 1990,
+  351-366.
+
+\bibitem{Simplex}
+V.~Klee and G.J. Minty.
+\newblock How good is the simplex algorithm ? in o. shisha, editor,
+  inequalities, iii, academic press, new york, ny, (1972), 159–175.
+
+\bibitem{10-116}
+Vigo~D Toth~P.
+\newblock Fast local search algorithms for the handicapped persons
+  transportation problem. in: Osman ih, kelly jp, editors. meta-heuristics:
+  Theory and applications. 1996. p. 677–690.
+
+\bibitem{10-72}
+Schuur~PC Van Der Bruggen~LJJ, Lenstra~JK.
+\newblock Variable-depth search for the single-vehicle pickup and delivery
+  problem with time windows. transportation science. 1993;27(3):298–311.
+
+\bibitem{13}
+Xiagang Zhao.
+\newblock Algorithmes pour les problèmes de tournées à la demande. gestion
+  et management. université blaise pascal - clermont-ferrand ii, 2011.
+  français. nnt : 2011clf22125. tel-00671350.
+
+\end{thebibliography}

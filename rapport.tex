@@ -2,6 +2,8 @@
 
 \usepackage[utf8]{inputenc}  
 \usepackage[T1]{fontenc}    
+\usepackage{graphicx}
+\usepackage{caption}
 
 \begin{document}
 
@@ -12,11 +14,41 @@
 
 \newpage
 
-\section{Optimisation combinatoire}
-
-\paragraph{}
+\paragraph{Optimisation combinatoire}
 L'optimisation combinatoire est une branche de la programmation mathématique née pour répondre aux besoins de plusieurs domaines dont l'informatique. L'optimisation combinatoire s'intéresse à des problèmes pour lesquelles il y a souvent un très grand nombre de solutions, qu'il n'est pas possible de d'explorer de façon explicite pour déterminer un meilleur choix.
 
+\section{Classification des méthodes d'optimisation}
+\paragraph{}
+Nous étudions ici la classification des méthodes d'optimisation.
+\begin{figure}[h]
+\includegraphics[scale=0.4]{images/classification-des-methodes-doptimisation.png}
+\caption{Classification des méthodes d'optimisation \cite{12-dreo}}
+\end{figure}
+\paragraph{Contexte}
+Les récents progrès technologiques ont fait naître de nouveaux besoins en transport. Pour répondre à ces besoins, certains services de transport innovants tels que les véhicules intelligentes ont vu le jour, ils s'inscrivent dans le cadre du transport à la demande et font face au défis de l'organisation du transport.
+
+\paragraph{Positionnement}
+La caractéristique principale du transport à la demande est la réactivité du système de transport à des demandes en temps réel. La différence par rapport au bus est qu'il n'y a pas d'itinéraire et d'horaire figés, contrairement au taxi le transport à la demande n'est pas à vocation individuel mais collectif. Ces deux aspects offrent une flexibilité  intéressante à l'utilisateur de ce type de transport. Si on élève le niveau d'abstraction, un tel système peut être assimilé à un réseau de transport où les requêtes de transport sont caractérisés par une origine, une destination, le nombre de passagers est les heures de passage. D'autres informations intéressantes peuvent être identifiées: un système déterministe selon qu'on peut prévoir les demandes de transport ou stochastique sinon. D'un point de vue économique, les requêtes de transport correspondent à la demande alors que les véhicules chargés d'effectuer le trajet correspond à l'offre. 
+
+\paragraph{Problèmes techniques}
+Les défis techniques que pose l'organisation du transport à la demande sont de l'ordre de l'algorithmique, de la modélisation et concernent aussi le mode de transport. Algorithmiquement, le DARP se décompose trois problèmes. Premièrement un problème d'affectation ou clustering problem où il est question d'affecter le véhicule adéquat pour répondre à une requête donnée. Deuxièmement il peut être abordé comme un problème de séquencement ou routing problem. Le troisième problème auquel se rapporte un cette organisation est l'horodatage ou sheduling problem. Le séquencement et l'horodatage peuvent être étudier ensemble sous forme de problème d'ordonnancement. On parle de problématique d'ordonnancement en présence de contraintes temporelles. Le contexte des problèmes techniques peut être statique ou dynamique. Dans le mode statique, le plan de transport est établi avant d'effectuer le trajet, toutes les informations sur les différentes requêtes sont connues et utilisées pour construire l'itinéraire à suivre par les véhicules. Notons que cela diffère quand même du plan de bus dont l'itinéraire est figé. Parafais \cite{Parafais} pose une frontière entre le routage de véhicule statique et dynamique en fonction de l'évolution en temps réel des données d'entrée pour planifier la tournée.
+
+\paragraph{Algorithmique et complexité}
+La complexité permet de mieux caractériser les difficultés rencontrées par les méthodes de résolution pour déterminer une solution à un problème d'optimisation combinatoire.
+
+\paragraph{État de l'art}
+Une fenêtre de temps est la période de temps spécifiée par une date au plus tôt et une date au plus tard durant laquelle une demande de chargement ou de déchargement est satisfaite. Elle permet d'indiquer des contraintes de temps, liées aux véhicules ou aux clients. Dans le cas où un véhicule arrive avant sa fenêtre de temps, une attente est crée et cela affecte la qualité de service considéré dans le DARP.
+
+\paragraph{Heuristiques}
+Les méthodes heuristiques ne garantissent pas l'optimalité de la solution, mais permettent d'obtenir un résultat de bonne qualité au bout d'un temps raisonnable. Il existe trois catégories d'heuristiques pour le DARP avec plusieurs véhicules. Il s'agit du cluster-first route second, l'amélioration locale et les procédures d'insertion \cite{13}. 
+
+	Le PDTW est structurellement très proche du DARP. Ainsi, plusieurs méthodes de résolution du DARP sont une adaptation des méthodes de résolution du PDTW. De même, le cluster-first route second provient du VRP et est une adaptation au DARP. Il décompose le problème en un problème de partitionnement où il est question d'affecter un groupe d'usagers au véhicule qui se chargera de les transporter; puis un problème d'élaboration des tournées. Baugh et al. (1998) \cite{10-113} résolvent le problème de partitionnement avec une méta-heuristique de type \textbf{recuit simulé} et l'élaboration des tournées avec une heuristique basée sur la recherche des \textbf{plus proches voisins}. Une \textbf{recherche taboue} est également utilisée pour le DARP statique par Cordeau et Laporte (2003) \cite{10-77}. Une méthode de \textbf{recherche locale} a été proposée par Van Der Bruggen et al. (1993) \cite{10-72} pour le problème de chargement et déchargement avec un seul véhicule et des fenêtres de temps.
+	
+	Plusieurs procédures pour améliorer les solutions obtenues par une heuristique d'insertion sont étudiés par Toth et Vigo (1996) \cite{10-116}.
+	
+	Les  heuristiques d'insertion sont rapides, faciles à implémenter. Elles peuvent être étendues pour prendre en compte de nouvelles contraintes \cite{10-123}, ce qui est particulièrement convenable pour un problème fortement contraint tel que le DARP. On a l'insertion partielle, exhaustive, avec trie des demandes puis avec réparation (forte).
+
+	Xiagang Zhao \cite{13} propose deux heuristiques gloutonnes basées sur la technique d'insertion pour le DARP: une heuristique d'insertion partielle et une heuristique d'insertion exhaustive qui sont comparés à l'\textbf{algorithme génétique} et la recherche taboue. Ces travaux montrent que les deux procédures d'insertion donnent des résultats de bonne qualité qui assurent une meilleure qualité de services. Il présente également une heuristique mémoire basée sur la technique d'insertion et la propagation de contraintes. Puis une recherche locale avec usage limitée de la procédure SPLIT est effectuée pour améliorer le résultat de l'heuristique d'insertion. Une méthode de résolution du DARP multi-objectif basée sur la métaheuristique \textbf{ELS} utilisant le \textbf{front de Pareto} \cite{13} permet d'atteindre des résultats pouvant rivaliser avec la recherche taboue et l'algorithme génétique. Les heuristiques: basique, mémoire, avec recherche arborescente sont adaptées pour traiter le DARP avec contraintes financières, un problème jamais traité auparavant.
 \section{Problème du voyageur de commerce}
 
 \section{Problème de tournée de véhicule}
@@ -25,17 +57,13 @@ L'optimisation combinatoire est une branche de la programmation mathématique n�
 
 \section{Programmation/optimisation linéaire en nombres entiers}
 
-\section{Algorithmique et complexité}
-
+\section{Problème du transport à la demande}
 \paragraph{}
-La complexité permet de mieux caractériser les difficultés rencontrées par les méthodes de résolution pour déterminer une solution à un problème d'optimisation combinatoire.
+De sa dénomination anglaise DARP ()
+
 
 \section{Méthode exacte}
 
-\section{Heuristique}
-
-\paragraph{}
-Les méthodes heuristiques ne garantissent pas l'optimalité de la solution, mais permettent d'obtenir un résultat de bonne qualité au bout d'un temps raisonnable.
 
 \section{Mat-heuristique}
 
@@ -89,6 +117,9 @@ Pour résoudre le problème de transport à la demande, l'approche intuitive ser
 Les méthodes de résolution exactes permettent de mener une étude suffisamment précise et fiable. Cependant elles ont du mal à gérer la complexité des problèmes de taille considérable. Quant aux méthodes de résolution approchées, elle sont utiles pour trouver rapidement une solution admissible, même si l'optimalité de la solution trouvée n'est pas la meilleure. Enfin, les méthodes de résolution basées sur les systèmes multi-agents permettent de gérer la complexité du problème en se basant sur des algorithmes d'intelligence artificielle. Il peut être utile de se servir d'un type spécifique de méthode ou d'en combiner certaines, selon le cas.
 
 \section{Positionnement du TAD par rapport aux autres travaux}
+
+\paragraph{}
+Les problèmes de tournée concernent l'organisation de la mobilité étudié par l'optimisation combinatoire et la recherche opérationnelle.
 
 \paragraph{}
 Le TAD fait parti de la famille des problèmes de tournées de véhicule (VRP), dont le plus populaire est celui du voyageur de commerce TSP. Plusieurs travaux sur le TSP ont conduit à l'élaboration de méthodes de résolution en optimisation combinatoire et en recherche opérationnelle(\cite{Nobody06}). Pour résoudre les problème de cette catégorie, les graphes sont un excellent outil de modélisation. En théorie des graphes, le TAD se rapproche du problème de recherche d'un circuit hamiltonien.
